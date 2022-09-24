@@ -29,6 +29,8 @@ export const Container = styled.div`
 	border-radius: 2px;
 	padding-top: 12px;
 	padding-bottom: 12px;
+	display: flex;
+	align-items: center;
 	margin-right: ${({ mr }) => `${mr}px`};
 	margin-left: ${({ ml }) => `${ml}px`};
 	margin-top: ${({ mt }) => `${mt}px`};

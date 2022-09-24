@@ -38,6 +38,10 @@ body {
 	}
 }
 
+img {
+	object-fit: cover;
+}
+
 .title {
 	color: var(--primaryColor);
 	text-align: center;

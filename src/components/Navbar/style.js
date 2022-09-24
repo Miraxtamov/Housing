@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-  background-color: var(--primaryColor);
-  color: var(--defaultColor)
-  margin-bottom: 10px;
+	background-color: var(--primaryColor);
+	color: var(--defaultColor);
 `;
 
 export const Nav = styled.div`
@@ -48,6 +47,7 @@ export const Nav = styled.div`
 
 		@media (max-width: 580px) {
 			display: block;
+			font-size: 20px;
 		}
 	}
 `;

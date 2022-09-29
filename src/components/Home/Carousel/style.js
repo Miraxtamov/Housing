@@ -5,6 +5,7 @@ import { ReactComponent as car } from "../../../assets/icons/car.svg";
 import { ReactComponent as ruler } from "../../../assets/icons/ruler.svg";
 
 export const Wrapper = styled.div`
+	position: relative;
 	width: 100%;
 	height: 100%;
 
@@ -19,6 +20,18 @@ export const Container = styled.div`
 	height: 571px;
 	position: relative;
 	margin-bottom: 96px;
+
+	@media (max-width: 1000px) {
+		margin-bottom: 80px;
+	}
+
+	@media (max-width: 680px) {
+		margin-bottom: 70px;
+	}
+
+	@media (max-width: 500px) {
+		margin-bottom: 64px;
+	}
 
 	.swiper-button-prev,
 	.swiper-button-next {
@@ -237,18 +250,10 @@ export const ContainerFilter = styled.div`
 			position: absolute;
 			top: 100%;
 			left: 50%;
-			transform: translate(-50%, 140%);
+			transform: translate(-50%, -110%);
 			z-index: 2;
 			width: fit-content;
 			padding: 24px;
-		}
-
-		@media (max-width: 580px) {
-			transform: translate(-50%, 130%);
-		}
-
-		@media (max-width: 480px) {
-			transform: translate(-50%, 160%);
 		}
 
 		.carousel-flex-btns {

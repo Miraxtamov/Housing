@@ -5,13 +5,13 @@ const CardLoader = (props) => (
 	<ContentLoader
 		speed={2}
 		width={"100%"}
-		height={435}
+		height={431}
 		viewBox="0 0 380 435"
 		backgroundColor="#f0f0f0"
 		foregroundColor="#dedede"
 		{...props}
 	>
-		<rect x="0" y="0" rx="2" ry="2" width="380" height="250" />
+		<rect x="0" y="0" rx="3" ry="3" width="380" height="250" />
 		<rect x="0" y="274" rx="0" ry="0" width="214" height="15" />
 		<rect x="0" y="300" rx="0" ry="0" width="327" height="15" />
 		<rect x="0" y="406" rx="0" ry="0" width="67" height="7" />

@@ -104,7 +104,15 @@ CardItem.InfoIconsTitle = styled.div`
 	line-height: 143%;
 	color: var(--secondaryColor);
 
-	@media (max-width: 335px) {
+	@media (max-width: 645px) {
+		font-size: 13px;
+	}
+	
+	@media (max-width: 610px) {
+		font-size: 14px;
+	}
+	
+	@media (max-width: 350px) {
 		font-size: 13px;
 	}
 `;

@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Popover } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import inputHome from "../../../assets/icons/inputHome.svg";
 import filter from "../../../assets/icons/filter.svg";
@@ -10,10 +12,20 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import homeCarousel1 from "../../../assets/imgs/home-carousel1.png";
 import homeCarousel2 from "../../../assets/imgs/home-carousel2.png";
 import Button from "../../Generic/Button";
+import AdvancedModal from "../../AdvancedModal";
 import { Container, ContainerFilter, Wrapper } from "./style";
 import { FilterSearchContainer } from "../../FilterSearchButton/style";
+import UseReplace from "../../../hooks/useReplace";
 
 const CarouselSec = () => {
+	const content = <AdvancedModal />;
+	const navigate = useNavigate();
+
+	const onChange = ({ target }) => {
+		const { name, value } = target;
+		navigate(UseReplace(name, value));
+	};
+
 	return (
 		<Wrapper>
 			<ContainerFilter className="container media-none-filter">
@@ -24,18 +36,26 @@ const CarouselSec = () => {
 							src={inputHome}
 							alt="input home"
 						/>
-						<ContainerFilter.Input placeholder="Enter an address, neighborhood, city, or ZIP code" />
+						<ContainerFilter.Input
+							onChange={onChange}
+							name="region"
+							placeholder="Enter an address, neighborhood, city, or ZIP code"
+						/>
 					</ContainerFilter.InputWrapper>
 					<div className="carousel-flex-btns">
-						<Button
-							className="carousel-filter-btn"
-							type={"secondary"}
-							pl={16}
-							pr={16}
-						>
-							<FilterSearchContainer.BtnImg src={filter} alt="filter" />
-							Advanced
-						</Button>
+						<Popover trigger="click" placement="bottomRight" content={content}>
+							<>
+								<Button
+									className="carousel-filter-btn"
+									type={"secondary"}
+									pl={16}
+									pr={16}
+								>
+									<FilterSearchContainer.BtnImg src={filter} alt="filter" />
+									Advanced
+								</Button>
+							</>
+						</Popover>
 						<Button
 							className="carousel-filter-btn"
 							type={"primary"}
@@ -160,13 +180,21 @@ const CarouselSec = () => {
 							src={inputHome}
 							alt="input home"
 						/>
-						<ContainerFilter.Input placeholder="Enter an address, neighborhood, city, or ZIP code" />
+						<ContainerFilter.Input
+							onChange={onChange}
+							name="region"
+							placeholder="Enter an address, neighborhood, city, or ZIP code"
+						/>
 					</ContainerFilter.InputWrapper>
 					<div className="carousel-flex-btns">
-						<FilterSearchContainer.Btn className="carousel-filter-btn-secondary">
-							<FilterSearchContainer.BtnImg src={filter} alt="filter" />
-							Advanced
-						</FilterSearchContainer.Btn>
+						<Popover trigger="click" placement="bottomRight" content={content}>
+							<>
+								<FilterSearchContainer.Btn className="carousel-filter-btn-secondary">
+									<FilterSearchContainer.BtnImg src={filter} alt="filter" />
+									Advanced
+								</FilterSearchContainer.Btn>
+							</>
+						</Popover>
 						<FilterSearchContainer.Btn className="carousel-filter-btn-primary">
 							<FilterSearchContainer.BtnImg src={search} alt="search" />
 							Search

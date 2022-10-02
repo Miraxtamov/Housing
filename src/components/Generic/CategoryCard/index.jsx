@@ -3,9 +3,15 @@ import { useQuery } from "react-query";
 import { CategoryCard1 } from "./style";
 import categoryBg from "../../../assets/imgs/categoryBg.png";
 import categoryHouse from "../../../assets/icons/categoryHouse.svg";
+import { useNavigate } from "react-router-dom";
 
 const CategoryCard = ({ title }) => {
 	// const [dataItems, setDataItems] = useState();
+	const navigate = useNavigate();
+
+	const goto = (id) => {
+		navigate(`/properties?category_id=${id}`);
+	};
 
 	useQuery(
 		["category"],
@@ -17,7 +23,7 @@ const CategoryCard = ({ title }) => {
 		{
 			onSuccess: (res) => {
 				// setDataItems(res?.data || []);
-				console.log(res?.data);
+				// console.log(res?.data);
 			},
 			onError: (err) => {
 				console.log(err);
@@ -28,7 +34,7 @@ const CategoryCard = ({ title }) => {
 	);
 
 	return (
-		<CategoryCard1>
+		<CategoryCard1 onClick={() => goto(title.id)}>
 			<CategoryCard1.Img src={categoryBg} alt="category house" />
 			<CategoryCard1.SvgTitle>
 				<CategoryCard1.Svg src={categoryHouse} />

@@ -55,4 +55,8 @@ export const Container = styled.div`
 		transform: scale(0.98);
 		opacity: 0.7;
 	}
+
+	&.display-none {
+		display: none;
+	}
 `;

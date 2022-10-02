@@ -4,6 +4,8 @@ import cardUser from "../../../assets/imgs/cardUser.png";
 import { CardItem } from "./style";
 
 const Card = ({ info }) => {
+	const cardTitle = info?.address || "Title";
+
 	const cardDesc =
 		(info?.name || "name") +
 		" " +
@@ -26,9 +28,11 @@ const Card = ({ info }) => {
 					<img src={cardUser} alt="user" />
 				</CardItem.UserContainer>
 				<CardItem.Info>
-					<CardItem.InfoTitle>{info?.address || "Title"}</CardItem.InfoTitle>
+					<CardItem.InfoTitle>
+						{cardTitle.length > 20 ? cardTitle.slice(0, 20) + "..." : cardTitle}
+					</CardItem.InfoTitle>
 					<CardItem.InfoDescription>
-						{cardDesc.length > 30 ? cardDesc.slice(0, 30) + "..." : cardDesc}
+						{cardDesc.length > 25 ? cardDesc.slice(0, 25) + "..." : cardDesc}
 					</CardItem.InfoDescription>
 					<CardItem.InfoIcons>
 						<CardItem.InfoIconsCon>

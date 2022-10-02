@@ -14,10 +14,22 @@ import logo from "../../assets/icons/logo.svg";
 import { Container, Nav } from "./style";
 import { navbar } from "../../utils/navbar";
 import Button from "../Generic/Button";
+import { user } from "../../utils/user";
+import { Popover } from "antd";
 
 const Navbar = () => {
 	const navigate = useNavigate();
 	const [isOpen, setIsOpen] = useState(false);
+
+	const content = () => {
+		return user.map((value) => (
+			<Nav.NavigationUserNavbar key={value.id}>
+				<Nav.NavigationUserLi onClick={() => navigate(value?.path)}>
+					{value?.title}
+				</Nav.NavigationUserLi>
+			</Nav.NavigationUserNavbar>
+		));
+	};
 
 	return (
 		<>
@@ -59,16 +71,26 @@ const Navbar = () => {
 							onClick={() => setIsOpen(!isOpen)}
 						/>
 					</Nav.Navigation>
-					<Nav.NavigationNavLogoLink to="signin">
-						<Button pl={40} pr={40}>
-							Login
-						</Button>
-					</Nav.NavigationNavLogoLink>
-					<FaSignInAlt
-						onClick={() => navigate("/signin")}
-						className="user-login"
-						alt="user login"
-					/>
+					{localStorage.getItem("token") ? (
+						<Popover trigger="click" placement="bottomRight" content={content}>
+							<>
+								<Nav.NavigationUserLogin src={userLogin} alt="user login" />
+							</>
+						</Popover>
+					) : (
+						<>
+							<Nav.NavigationNavLogoLink to="signin">
+								<Button pl={40} pr={40}>
+									Login
+								</Button>
+							</Nav.NavigationNavLogoLink>
+							<FaSignInAlt
+								onClick={() => navigate("/signin")}
+								className="user-login"
+								alt="user login"
+							/>
+						</>
+					)}
 				</Nav>
 			</Container>
 			<Outlet />

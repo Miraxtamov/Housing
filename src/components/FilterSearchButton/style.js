@@ -9,12 +9,24 @@ export const Container = styled.div`
 		display: flex;
 		gap: 20px;
 	}
+
+	@media (max-width: 670px) {
+		padding: 24px;
+	}
+
+	@media (max-width: 480px) {
+		width: fit-content;
+	}
 `;
 
 export const FilterSearchContainer = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 20px;
+
+	@media (max-width: 670px) {
+		flex-direction: column;
+	}
 `;
 
 Container.InputWrapper = styled.div`

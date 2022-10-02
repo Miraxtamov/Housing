@@ -200,9 +200,8 @@ Nav.NavigationNavLogoLink = styled(NavLink)`
 	}
 `;
 
-Nav.NavigationUserLogin = styled.div`
+Nav.NavigationUserLogin = styled.img`
 	cursor: pointer;
-	display: none;
 
 	&:hover {
 		opacity: 0.7;
@@ -211,5 +210,30 @@ Nav.NavigationUserLogin = styled.div`
 	&:active {
 		transform: scale(0.97);
 		opacity: 0.7;
+	}
+`;
+
+Nav.NavigationUserNavbar = styled.div`
+	width: 177px;
+	background-color: var(--defaultColor);
+`;
+
+Nav.NavigationUserLi = styled.div`
+	font-size: 14px;
+	color: #000000;
+	line-height: 20px;
+	cursor: pointer;
+	padding: 8px;
+	margin-bottom: 4px;
+	border-radius: 5px;
+
+	&:hover,
+	&.active {
+		background-color: var(--activeColor);
+		color: var(--defaultColor);
+	}
+
+	&:active {
+		transform: scale(0.99);
 	}
 `;

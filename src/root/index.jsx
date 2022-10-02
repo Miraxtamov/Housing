@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Signin from "../components/Signin";
 import Signup from "../components/Signup";
 import { navbar } from "../utils/navbar";
+import Favorites from "../components/Favorites";
 
 const Root = () => {
 	return (
@@ -22,7 +23,7 @@ const Root = () => {
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/profile" element={<Generic />} />
 					<Route path="/myproperties" element={<Generic />} />
-					<Route path="/favorites" element={<Generic />} />
+					<Route path="/favorites" element={<Favorites />} />
 				</Route>
 			</Routes>
 			<Footer />

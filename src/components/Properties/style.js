@@ -107,6 +107,4 @@ CardsContainer.CardsNoData = styled.div`
 	font-size: 36px;
 	font-weight: 600;
 	text-align: center;
-	margin-left: 0;
-	margin-right: 0;
 `;

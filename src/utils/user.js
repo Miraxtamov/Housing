@@ -1,3 +1,4 @@
+import Favorites from "../components/Favorites";
 import Generic from "../pages/Generic";
 
 export const user = [
@@ -8,5 +9,5 @@ export const user = [
 		path: "/myproperties",
 		element: <Generic />,
 	},
-	{ id: 3, title: "Favorites", path: "/favorites", element: <Generic /> },
+	{ id: 3, title: "Favorites", path: "/favorites", element: <Favorites /> },
 ];

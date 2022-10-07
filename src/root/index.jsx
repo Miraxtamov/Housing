@@ -7,6 +7,7 @@ import Signin from "../components/Signin";
 import Signup from "../components/Signup";
 import { navbar } from "../utils/navbar";
 import Favorites from "../components/Favorites";
+import ProductView from "../components/ProductView";
 
 const Root = () => {
 	return (
@@ -19,6 +20,7 @@ const Root = () => {
 							<Route key={value.id} path={value.path} element={value.element} />
 						);
 					})}
+					<Route path="/properties/:id" element={<ProductView />} />
 					<Route path="/signin" element={<Signin />} />
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/profile" element={<Generic />} />

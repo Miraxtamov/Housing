@@ -32,6 +32,8 @@ export const Container = styled.div`
 	display: inline-block;
 	align-items: center;
 	display: flex;
+	justify-content: center;
+	width: ${({ w }) => `${w}%`};
 	margin-right: ${({ mr }) => `${mr}px`};
 	margin-left: ${({ ml }) => `${ml}px`};
 	margin-top: ${({ mt }) => `${mt}px`};

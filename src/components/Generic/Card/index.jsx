@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import noPicture from "../../../assets/imgs/nopicture.jpg";
 import cardUser from "../../../assets/imgs/cardUser.png";
 import { CardItem } from "./style";
 
 const Card = ({ info }) => {
+	const navigate = useNavigate();
 	const cardTitle = info?.address || "Title";
 
 	const cardDesc =
@@ -14,6 +16,10 @@ const Card = ({ info }) => {
 		(info?.city || "City") +
 		" " +
 		(info?.country || "Country");
+
+	const onClick = (id) => {
+		navigate(`/properties/${info?.id}`);
+	};
 
 	return (
 		<>
@@ -28,7 +34,7 @@ const Card = ({ info }) => {
 					<img src={cardUser} alt="user" />
 				</CardItem.UserContainer>
 				<CardItem.Info>
-					<CardItem.InfoTitle>
+					<CardItem.InfoTitle onClick={onClick}>
 						{cardTitle.length > 20 ? cardTitle.slice(0, 20) + "..." : cardTitle}
 					</CardItem.InfoTitle>
 					<CardItem.InfoDescription>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Progress } from "antd";
 import { Container, Wrapper } from "./style";
+import ReviewsCard from "../../../Generic/ReviewCard";
 
 const Reviews = () => {
 	const progressStyle = {
@@ -43,6 +44,10 @@ const Reviews = () => {
 					</Wrapper.Row>
 				</Wrapper.Column>
 			</Wrapper>
+			<Wrapper.ReviewCards>
+				<ReviewsCard />
+				<ReviewsCard />
+			</Wrapper.ReviewCards>
 		</Container>
 	);
 };

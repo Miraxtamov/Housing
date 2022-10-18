@@ -21,9 +21,19 @@ Container.Description = styled.div`
 `;
 
 export const CardContainer = styled.div`
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
+	margin-bottom: 48px;
+
+	@media (max-width: 950px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 610px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 `;
 
 CardContainer.NoData = styled.div`

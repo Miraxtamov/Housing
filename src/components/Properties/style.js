@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Container } from "../FilterSearchButton/style";
 
 export const PropertiesContainer = styled.div`
 	margin-top: 54px;

@@ -60,3 +60,26 @@ Wrapper.Desc = styled.div`
 		width: 115px;
 	}
 `;
+
+Wrapper.ReviewCards = styled.div`
+	margin-top: 27px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 120px;
+
+	@media (max-width: 950px) {
+		gap: 100px;
+	}
+
+	@media (max-width: 924px) {
+		gap: 50px;
+	}
+
+	@media (max-width: 874px) {
+		gap: 25px;
+	}
+
+	@media (max-width: 790px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+`;

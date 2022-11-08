@@ -8,6 +8,7 @@ import Signup from "../components/Signup";
 import { navbar } from "../utils/navbar";
 import Favorites from "../components/Favorites";
 import ProductView from "../components/ProductView";
+import AddNew from "../components/AddNew";
 
 const Root = () => {
 	return (
@@ -26,6 +27,7 @@ const Root = () => {
 					<Route path="/profile" element={<Generic />} />
 					<Route path="/myproperties" element={<Generic />} />
 					<Route path="/favorites" element={<Favorites />} />
+					<Route path={"/post-new-ad"} element={<AddNew />} />
 				</Route>
 			</Routes>
 			<Footer />

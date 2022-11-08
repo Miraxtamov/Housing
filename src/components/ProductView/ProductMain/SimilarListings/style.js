@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
 	@media (max-width: 1080px) {
 		margin-top: 48px;
 	}
-	
-  @media (max-width: 900px) {
+
+	@media (max-width: 900px) {
 		display: none;
 	}
 
@@ -125,7 +125,7 @@ export const AllRecommendedCards = styled.div`
 AllRecommendedCards.Wrapper = styled.div`
 	display: none;
 	margin-bottom: 60px;
-  margin-top: 48px;
+	margin-top: 48px;
 
 	@media (max-width: 700px) {
 		margin-bottom: 50px;

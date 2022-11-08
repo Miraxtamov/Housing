@@ -137,7 +137,7 @@ AllRecommendedCards.Wrapper = styled.div`
 	@media (max-width: 664px) {
 		margin-bottom: 32px;
 	}
-
+	
 	@media (max-width: 900px) {
 		display: flex;
 		flex-direction: column;
